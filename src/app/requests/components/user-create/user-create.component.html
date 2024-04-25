@@ -1,0 +1,20 @@
+@if (newUser | async; as user){
+    <p>Name: {{user.name}}</p>
+    <p>ID: {{user.id}}</p>
+    <p>Job: {{user.job}}</p>
+    <p>Created at: {{user.createdAt}}</p>
+}
+
+<div [formGroup]="userGroup" class="user-create-form">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Name</span>
+        <input type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1" id="name" formControlName="name">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Job</span>
+        <input type="text" class="form-control" placeholder="Job" aria-label="Job" aria-describedby="basic-addon1" id="job" formControlName="job">
+    </div>
+</div>
+<button (click)="createUser()">
+To create
+</button>
